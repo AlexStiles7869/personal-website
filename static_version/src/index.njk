@@ -1,0 +1,81 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+
+<div class="site-content is-layout-constrained" style="padding-top: var(--wp--preset--spacing--80); padding-bottom: var(--wp--preset--spacing--100);">
+	
+	<!-- Intro Block -->
+	<div class="wp-block-group">
+		<h1>Building the future of the web, one static site at a time.</h1>
+		<p class="has-large-font-size">I have a passion for building clean, scalable applications and experimenting with new technologies. This site is a static port of my original WordPress theme.</p>
+		<p>I started my career as a full-stack developer and have since moved into architectural roles, focusing on cloud-native solutions and developer experience. I'm currently exploring the intersection of AI and traditional software engineering.</p>
+		
+		<div class="wp-block-buttons">
+			<div class="wp-block-button">
+				<a class="wp-element-button" href="#resume">View Resume</a>
+			</div>
+			<div class="wp-block-button">
+				<a class="wp-element-button is-style-outline" href="mailto:alex@example.com">Get in Touch</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Image Grid (alignwide) -->
+	<div class="wp-block-group alignwide" style="margin-top: var(--wp--preset--spacing--100); margin-bottom: var(--wp--preset--spacing--100);">
+		<!-- Large Image -->
+		<div class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
+			<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" alt="Workspace 1" style="border-radius: 8px; width: 100%;">
+		</div>
+		
+		<!-- Two Smaller Images side by side -->
+		<div class="wp-block-columns" style="margin-bottom: 0;">
+			<div class="wp-block-column">
+				<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=450&fit=crop" alt="Workspace 2" style="border-radius: 8px; width: 100%;">
+			</div>
+			<div class="wp-block-column">
+				<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop" alt="Workspace 3" style="border-radius: 8px; width: 100%;">
+			</div>
+		</div>
+	</div>
+
+	<!-- Resume Section -->
+	<div id="resume" class="wp-block-group" style="margin-top: var(--wp--preset--spacing--100); border-top: 1px solid var(--wp--preset--color--contrast-5); padding-top: var(--wp--preset--spacing--80);">
+		<h2 class="has-small-font-size has-system-sans-serif-font-family" style="font-weight: 500; margin-top: 0;">Work Experience</h2>
+		
+		{% for job in resume.workExperience %}
+		<div class="wp-block-columns resume-item">
+			<div class="wp-block-column has-contrast-2-color" style="flex-basis: 30%; font-weight: 500;">
+				<p>{{ job.period }}</p>
+			</div>
+			<div class="wp-block-column">
+				<div class="resume-job-title">
+					<p>{{ job.role }} @ {{ job.company }}</p>
+				</div>
+				<div class="resume-content">
+					<p>{{ job.description }}</p>
+					
+					{% if job.images %}
+					<div class="wp-block-group" style="margin-top: var(--wp--preset--spacing--40);">
+						<!-- Large Image -->
+						<div class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
+							<img src="{{ job.images[0] }}" alt="{{ job.company }}" style="border-radius: 8px; width: 100%;">
+						</div>
+						
+						<!-- Two Smaller Images -->
+						<div class="wp-block-columns" style="margin-bottom: 0;">
+							<div class="wp-block-column">
+								<img src="{{ job.images[1] }}" alt="{{ job.company }}" style="border-radius: 8px; width: 100%;">
+							</div>
+							<div class="wp-block-column">
+								<img src="{{ job.images[2] }}" alt="{{ job.company }}" style="border-radius: 8px; width: 100%;">
+							</div>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>

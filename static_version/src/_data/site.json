@@ -1,0 +1,8 @@
+{
+	"title": "Alex Stiles",
+	"tagline": "Software Engineer",
+	"about": "Hi! I’m Alex, a software engineer.",
+	"navigation": [
+		{ "label": "Profile", "url": "/#resume", "hidden": true }
+	]
+}

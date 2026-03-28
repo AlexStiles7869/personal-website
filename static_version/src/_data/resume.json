@@ -1,0 +1,21 @@
+{
+	"workExperience": [
+		{
+			"period": "2021 – Present",
+			"company": "Tech Solutions Inc.",
+			"role": "Senior Software Engineer",
+			"description": "Lead developer for a high-traffic e-commerce platform. Implemented microservices architecture and automated CI/CD pipelines.",
+			"images": [
+				"https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=450&fit=crop",
+				"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop",
+				"https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&h=450&fit=crop"
+			]
+		},
+		{
+			"period": "2018 – 2021",
+			"company": "Creative Web Agency",
+			"role": "Full Stack Developer",
+			"description": "Developed and maintained dozens of client websites using React, Node.js, and various CMS platforms including WordPress."
+		}
+	]
+}
