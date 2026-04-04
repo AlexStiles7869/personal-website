@@ -9,6 +9,9 @@
 	<link rel="preload" href="/assets/fonts/newsreader/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
 	
 	<link rel="stylesheet" href="/assets/css/main.css">
+	
+	<!-- PhotoSwipe Core CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.3/dist/photoswipe.css">
 </head>
 <body>
 	{% include "header.njk" %}
@@ -18,5 +21,25 @@
 	</main>
 
 	{% include "footer.njk" %}
+
+	<!-- PhotoSwipe Initialization -->
+	<script type="module">
+		import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.3/dist/photoswipe-lightbox.esm.js';
+		
+		console.log('Initializing PhotoSwipe...');
+		
+		const lightbox = new PhotoSwipeLightbox({
+			gallery: '.pswp-gallery',
+			children: 'a.pswp-link',
+			pswpModule: () => import('https://unpkg.com/photoswipe@5.4.3/dist/photoswipe.esm.js')
+		});
+		
+		lightbox.on('uiRegister', function() {
+			console.log('PhotoSwipe UI Registered');
+		});
+
+		lightbox.init();
+		console.log('PhotoSwipe Initialized');
+	</script>
 </body>
 </html>

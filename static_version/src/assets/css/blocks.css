@@ -216,6 +216,10 @@ h2 {
 }
 
 /* Image Grid Fix */
+.grid-image, .grid-image-large, .grid-image-portrait {
+	background-color: var(--wp--preset--color--base-2);
+}
+
 .grid-image {
 	width: 100%;
 	object-fit: cover;
