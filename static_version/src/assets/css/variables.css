@@ -33,7 +33,7 @@
 
 	/* Typography */
 	--wp--preset--font-family--body: "Newsreader", ui-serif, "Times New Roman", serif;
-	--wp--preset--font-family--system-sans-serif: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	--wp--preset--font-family--system-sans-serif: "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 	--wp--preset--font-family--system-serif: ui-serif, "Times New Roman", serif;
 }
 
