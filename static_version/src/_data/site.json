@@ -1,7 +1,7 @@
 {
-	"title": "Alex Pulitzer",
+	"title": "Alex Stiles",
 	"tagline": "Software Engineer",
-	"about": "I’m Alex Pulitzer, a software engineer with a passion for building clean, scalable applications. This site serves as my personal resume, ported from a minimal WordPress theme.",
+	"about": "I am a Software Engineer specializing in distributed systems, currently building SENSE—a high-scale, low-latency real-time cache for CBA's retail bank. My work focuses on ingesting tens of millions of transactions daily using Java, Flink, and Cassandra to drive seamless customer experiences. Beyond the platform, I am passionate about applying architectural rigor to solve complex engineering challenges at scale.",
 	"navigation": [
 		{ "label": "Profile", "url": "/" }
 	]
