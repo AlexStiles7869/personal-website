@@ -1,282 +1,324 @@
 /* Reset & Base Styles */
-*, *::before, *::after {
-	box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, p, ul, ol, li {
-	margin: 0;
-	padding: 0;
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
 }
 
 p {
-	margin-bottom: var(--wp--preset--spacing--50);
+    margin-bottom: var(--wp--preset--spacing--50);
 }
 
 p:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
-	display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 body {
-	background-color: var(--wp--preset--color--base);
-	color: var(--wp--preset--color--contrast);
-	font-family: var(--wp--preset--font-family--body);
-	font-size: var(--wp--preset--font-size--medium);
-	font-weight: 400;
-	line-height: 1.5;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
+    background-color: var(--wp--preset--color--base);
+    color: var(--wp--preset--color--contrast);
+    font-family: var(--wp--preset--font-family--body);
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: 400;
+    line-height: 1.5;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
-	color: inherit;
-	transition: opacity 0.1s linear, color 0.1s linear;
+    color: inherit;
+    transition:
+        opacity 0.1s linear,
+        color 0.1s linear;
 }
 
 /* Layout System */
 .is-layout-constrained > :not(.alignwide):not(.alignfull) {
-	max-width: 608px;
-	margin-left: auto;
-	margin-right: auto;
+    max-width: 608px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .is-layout-constrained > .alignwide {
-	max-width: 818px;
-	margin-left: auto;
-	margin-right: auto;
+    max-width: 818px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .site-content {
-	padding-left: var(--wp--preset--spacing--body-margin);
-	padding-right: var(--wp--preset--spacing--body-margin);
+    padding-left: var(--wp--preset--spacing--body-margin);
+    padding-right: var(--wp--preset--spacing--body-margin);
 }
 
 /* Buttons */
 .wp-element-button {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	background-color: var(--wp--preset--color--contrast);
-	color: var(--wp--preset--color--base);
-	border-radius: 4px;
-	padding: 0.9em 1.5em;
-	font-family: var(--wp--preset--font-family--system-sans-serif);
-	font-size: var(--wp--preset--font-size--small);
-	font-weight: 500;
-	text-decoration: none;
-	line-height: 1.2;
-	border: 1px solid var(--wp--preset--color--contrast);
-	cursor: pointer;
-	transition: opacity 0.1s linear;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--wp--preset--color--contrast);
+    color: var(--wp--preset--color--base);
+    border-radius: 4px;
+    padding: 0.9em 1.5em;
+    font-family: var(--wp--preset--font-family--system-sans-serif);
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.2;
+    border: 1px solid var(--wp--preset--color--contrast);
+    cursor: pointer;
+    transition: opacity 0.1s linear;
 }
 
 .wp-element-button svg {
-	display: block;
-	flex-shrink: 0;
+    display: block;
+    flex-shrink: 0;
 }
 
 .wp-element-button:hover {
-	opacity: 1;
+    opacity: 1;
 }
 
 .is-style-outline {
-	background-color: transparent;
-	color: var(--wp--preset--color--contrast);
+    background-color: transparent;
+    color: var(--wp--preset--color--contrast);
 }
 
 .is-style-outline:hover {
-	background-color: transparent !important;
-	opacity: 1 !important;
-	color: var(--wp--preset--color--contrast) !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+    color: var(--wp--preset--color--contrast) !important;
 }
 
 .wp-block-buttons {
-	display: flex;
-	gap: 1em;
-	margin-top: var(--wp--preset--spacing--50);
-	margin-bottom: var(--wp--preset--spacing--70);
+    display: flex;
+    gap: 1em;
+    margin-top: var(--wp--preset--spacing--50);
+    margin-bottom: var(--wp--preset--spacing--70);
 }
 
 /* Navigation */
 nav ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-link {
-	text-decoration: none;
-	color: var(--wp--preset--color--contrast-2);
-	font-weight: 400;
-	transition: color 0.1s linear;
+    text-decoration: none;
+    color: var(--wp--preset--color--contrast-2);
+    font-weight: 400;
+    transition: color 0.1s linear;
 }
 
 .nav-link:hover {
-	text-decoration: underline;
-	text-underline-offset: 0.2em;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
 
 .nav-link[aria-current="page"] {
-	color: var(--wp--preset--color--contrast);
-	font-weight: 400;
+    color: var(--wp--preset--color--contrast);
+    font-weight: 400;
 }
 
 /* Site Header Components */
 .wp-block-site-title {
-	font-family: var(--wp--preset--font-family--system-sans-serif);
-	font-size: var(--wp--preset--font-size--small);
-	font-weight: 500;
-	line-height: 1.5;
-	margin: 0;
+    font-family: var(--wp--preset--font-family--system-sans-serif);
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
 }
 
 .wp-block-site-tagline {
-	font-family: var(--wp--preset--font-family--system-sans-serif);
-	font-size: var(--wp--preset--font-size--small);
-	color: var(--wp--preset--color--contrast-2);
-	line-height: 1.5;
-	margin: 0;
+    font-family: var(--wp--preset--font-family--system-sans-serif);
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--contrast-2);
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* Typography Utilities */
-h1, h2, h3, h4 {
-	font-family: var(--wp--preset--font-family--system-sans-serif);
-	font-weight: 500;
-	line-height: 1.5;
-	margin-top: var(--wp--preset--spacing--70);
-	margin-bottom: var(--wp--preset--spacing--50);
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--wp--preset--font-family--system-sans-serif);
+    font-weight: 500;
+    line-height: 1.5;
+    margin-top: var(--wp--preset--spacing--70);
+    margin-bottom: var(--wp--preset--spacing--50);
 }
 
 h1 {
-	font-size: var(--wp--preset--font-size--large);
+    font-size: var(--wp--preset--font-size--large);
 }
 
 h2 {
-	font-size: var(--wp--preset--font-size--medium);
+    font-size: var(--wp--preset--font-size--medium);
 }
 
-.has-small-font-size { font-size: var(--wp--preset--font-size--small); }
-.has-x-small-font-size { font-size: var(--wp--preset--font-size--x-small); }
-.has-large-font-size { font-size: var(--wp--preset--font-size--large); }
+.has-small-font-size {
+    font-size: var(--wp--preset--font-size--small);
+}
+.has-x-small-font-size {
+    font-size: var(--wp--preset--font-size--x-small);
+}
+.has-large-font-size {
+    font-size: var(--wp--preset--font-size--large);
+}
 
-.has-contrast-2-color { color: var(--wp--preset--color--contrast-2); }
-.has-system-sans-serif-font-family { font-family: var(--wp--preset--font-family--system-sans-serif); }
+.has-contrast-2-color {
+    color: var(--wp--preset--color--contrast-2);
+}
+.has-system-sans-serif-font-family {
+    font-family: var(--wp--preset--font-family--system-sans-serif);
+}
 
 /* Flex & Columns */
 .wp-block-columns {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--wp--preset--spacing--50);
-	margin-bottom: var(--wp--preset--spacing--50);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wp--preset--spacing--50);
+    margin-bottom: var(--wp--preset--spacing--50);
 }
 
 .wp-block-column {
-	flex: 1;
-	min-width: 0;
+    flex: 1;
+    min-width: 0;
 }
 
 .wp-block-column[style*="flex-basis: 30%"] {
-	flex: 0 0 30%;
+    flex: 0 0 30%;
 }
 
 .is-not-stacked-on-mobile {
-	flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
 }
 
 /* Responsive Overrides */
 @media (max-width: 600px) {
-	/* Only stack resume items and main containers, not image grids */
-	.resume-item.wp-block-columns {
-		flex-direction: column;
-		gap: 8px;
-	}
+    .resume-item.wp-block-columns {
+        flex-direction: column;
+        gap: 8px;
+    }
 
-	.resume-item .wp-block-column[style*="flex-basis: 30%"] {
-		flex-basis: 100% !important;
-	}
+    .resume-item .wp-block-column[style*="flex-basis: 30%"] {
+        flex-basis: 100% !important;
+    }
 
-	/* Keep image grids side-by-side but reduce gap */
-	.wp-block-group .wp-block-columns:not(.resume-item) {
-		flex-wrap: nowrap;
-		gap: 12px;
-	}
+    /* Maintain consistent gap even on mobile */
+    .wp-block-group .wp-block-columns:not(.resume-item) {
+        flex-wrap: nowrap;
+        gap: var(--wp--preset--spacing--50);
+    }
 
-	/* Mobile Footer: Center and Reverse */
-	.site-footer-content {
-		flex-direction: column-reverse !important;
-		align-items: center !important;
-		text-align: center;
-		gap: 12px;
-	}
+    .site-footer-content {
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        text-align: center;
+        gap: 12px;
+    }
+
+    /* Toggle captions on mobile */
+    .pswp-gallery figcaption,
+    .individual-caption {
+        display: none !important;
+    }
+
+    .grid-wide-caption {
+        display: block !important;
+        margin-top: -18px !important;
+    }
+}
+
+@media (min-width: 601px) {
+    .grid-wide-caption {
+        display: none !important;
+    }
 }
 
 /* Image Grid Fix */
-.grid-image, .grid-image-large, .grid-image-portrait {
-	background-color: var(--wp--preset--color--base-2);
+.grid-image,
+.grid-image-large,
+.grid-image-portrait {
+    background-color: var(--wp--preset--color--base-2);
 }
 
 .grid-image {
-	width: 100%;
-	object-fit: cover;
-	border-radius: 8px;
-	aspect-ratio: 4 / 3;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    aspect-ratio: 4 / 3;
 }
 
 .grid-image-large {
-	width: 100%;
-	object-fit: cover;
-	border-radius: 8px;
-	aspect-ratio: 2 / 1;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    aspect-ratio: 2 / 1;
 }
 
 .grid-image-portrait {
-	width: 100%;
-	object-fit: cover;
-	border-radius: 8px;
-	aspect-ratio: 3 / 4;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    aspect-ratio: 3 / 4;
 }
 
 /* Details Component */
 details.animated-details {
-	margin-top: var(--wp--preset--spacing--40);
+    margin-top: var(--wp--preset--spacing--40);
 }
 
 details.animated-details summary {
-	list-style: none;
-	cursor: pointer;
-	font-family: var(--wp--preset--font-family--system-sans-serif);
-	font-size: var(--wp--preset--font-size--small);
-	font-weight: 500;
-	color: var(--wp--preset--color--contrast-2);
-	display: flex;
-	align-items: center;
-	gap: 6px;
-	user-select: none;
-	line-height: 1;
+    list-style: none;
+    cursor: pointer;
+    font-family: var(--wp--preset--font-family--system-sans-serif);
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 500;
+    color: var(--wp--preset--color--contrast-2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+    line-height: 1;
 }
 
 details.animated-details summary::-webkit-details-marker {
-	display: none;
+    display: none;
 }
 
 details.animated-details summary:hover {
-	color: var(--wp--preset--color--contrast);
+    color: var(--wp--preset--color--contrast);
 }
 
 .details-marker {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: transform 0.2s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-out;
 }
 
 details.animated-details[open] .details-marker {
-	transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 /* PhotoSwipe Customization */
@@ -285,51 +327,75 @@ details.animated-details[open] .details-marker {
 .pswp__button--arrow--prev,
 .pswp__button--arrow--next,
 .pswp__preloader {
-	display: none !important;
+    display: none !important;
 }
 
 .pswp__counter {
-	font-family: var(--wp--preset--font-family--system-sans-serif) !important;
-	font-size: var(--wp--preset--font-size--x-small) !important;
-	font-weight: 500;
-	opacity: 0.8;
-	left: 24px !important;
-	top: 24px !important;
-	right: auto !important; /* Crucial to move it from the right */
-	margin: 0 !important;
-	height: auto !important;
-	line-height: 1 !important;
+    font-family: var(--wp--preset--font-family--system-sans-serif) !important;
+    font-size: var(--wp--preset--font-size--x-small) !important;
+    font-weight: 500;
+    opacity: 0.8;
+
+    /* Absolute positioning to bypass default flex container */
+    position: absolute !important;
+    left: 24px !important;
+    top: 24px !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    z-index: 1000 !important;
 }
 
 /* Image Captions & Figures */
 figure {
-	margin: 0; /* Reset browser default figure margins */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.wp-block-image figcaption, .image-caption {
-	margin-top: var(--wp--preset--spacing--20);
-	font-family: var(--wp--preset--font-family--system-sans-serif);
-	font-size: var(--wp--preset--font-size--x-small);
-	color: var(--wp--preset--color--contrast-2);
-	line-height: 1.4;
-	max-width: 100%;
+.wp-block-image {
+    margin-bottom: var(--wp--preset--spacing--50);
+}
+
+/* "Caption in Gutter" logic: 
+   The figure has a 24px margin-bottom. 
+   The caption sits at the bottom of the figure with a tiny margin-top.
+   If the caption is small, it essentially lives within that 24px visual gap.
+*/
+.wp-block-image figcaption,
+.image-caption,
+.grid-wide-caption {
+    margin-top: 6px;
+    font-family: var(--wp--preset--font-family--system-sans-serif);
+    font-size: var(--wp--preset--font-size--x-small);
+    color: var(--wp--preset--color--contrast-2);
+    line-height: 1.4;
+    max-width: 100%;
+}
+
+/* Special tight spacing for captions inside grids */
+.pswp-gallery .wp-block-image {
+    margin-bottom: var(--wp--preset--spacing--50);
 }
 
 /* Resume Item Style */
 .resume-item {
-	font-family: var(--wp--preset--font-family--system-sans-serif);
-	font-size: var(--wp--preset--font-size--small);
+    font-family: var(--wp--preset--font-family--system-sans-serif);
+    font-size: var(--wp--preset--font-size--small);
 }
 
 .resume-job-title {
-	font-weight: 500;
-	margin: 0 0 4px 0;
+    font-weight: 500;
+    margin: 0 0 4px 0;
 }
 
 .resume-job-title p {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .resume-content {
-	line-height: 1.6;
+    line-height: 1.6;
 }

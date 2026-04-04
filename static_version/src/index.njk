@@ -27,44 +27,52 @@ title: Home
 	</div>
 
 	<!-- Image Grid (alignwide) -->
-	<div class="wp-block-group alignwide pswp-gallery" style="margin-top: var(--wp--preset--spacing--100); margin-bottom: var(--wp--preset--spacing--100);">
-		<!-- Large Image -->
-		<figure class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
-			<a href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=2400&h=1200&fit=crop" class="pswp-link" data-pswp-width="2400" data-pswp-height="1200" target="_blank">
-				<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" 
-					 alt="Workspace 1" 
-					 class="grid-image-large"
-					 width="1200" height="600"
-					 sizes="(min-width: 820px) 818px, 100vw"
-					 loading="eager">
-			</a>
-			<figcaption>The modern workspace: where distributed systems are designed and high-scale architectures take shape.</figcaption>
-		</figure>
-		
-		<!-- Two Smaller Images side by side -->
-		<div class="wp-block-columns" style="margin-bottom: 0;">
-			<div class="wp-block-column">
-				<a href="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=2000&h=1500&fit=crop" class="pswp-link" data-pswp-width="2000" data-pswp-height="1500" target="_blank">
-					<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=450&fit=crop" 
-						 alt="Workspace 2" 
-						 class="grid-image"
-						 width="600" height="450"
-						 sizes="(min-width: 820px) 400px, 50vw"
+	{# <div class="wp-block-group alignwide" style="margin-top: var(--wp--preset--spacing--100); margin-bottom: var(--wp--preset--spacing--100);">
+		<div class="pswp-gallery">
+			<!-- Large Image -->
+			<figure class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
+				<a href="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=2400&h=1200&fit=crop" class="pswp-link" data-pswp-width="2400" data-pswp-height="1200" target="_blank">
+					<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" 
+						 alt="Workspace 1" 
+						 class="grid-image-large"
+						 width="1200" height="600"
+						 sizes="(min-width: 820px) 818px, 100vw"
 						 loading="eager">
 				</a>
+				<figcaption>Building distributed systems at CBA.</figcaption>
+			</figure>
+			
+			<!-- Two Smaller Images side by side -->
+			<div class="wp-block-columns" style="margin-bottom: 0;">
+				<div class="wp-block-column">
+					<figure class="wp-block-image">
+						<a href="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=2000&h=1500&fit=crop" class="pswp-link" data-pswp-width="2000" data-pswp-height="1500" target="_blank">
+							<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=450&fit=crop" 
+								 alt="Code snippet" 
+								 class="grid-image"
+								 width="600" height="450"
+								 sizes="(min-width: 820px) 400px, 50vw">
+						</a>
+						<figcaption class="individual-caption">System architecture design.</figcaption>
+					</figure>
+				</div>
+				<div class="wp-block-column">
+					<figure class="wp-block-image">
+						<a href="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=2000&h=1500&fit=crop" class="pswp-link" data-pswp-width="2000" data-pswp-height="1500" target="_blank">
+							<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop" 
+								 alt="Laptop on desk" 
+								 class="grid-image"
+								 width="600" height="450"
+								 sizes="(min-width: 820px) 400px, 50vw">
+						</a>
+						<figcaption class="individual-caption">Real-time data visualization.</figcaption>
+					</figure>
+				</div>
 			</div>
-			<div class="wp-block-column">
-				<a href="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=2000&h=1500&fit=crop" class="pswp-link" data-pswp-width="2000" data-pswp-height="1500" target="_blank">
-					<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop" 
-						 alt="Workspace 3" 
-						 class="grid-image"
-						 width="600" height="450"
-						 sizes="(min-width: 820px) 400px, 50vw"
-						 loading="eager">
-				</a>
-			</div>
+			<!-- Grid Wide Caption (only visible on mobile) -->
+			<div class="grid-wide-caption">Architecture and data visualizations.</div>
 		</div>
-	</div>
+	</div> #}
 
 	<!-- Resume Section -->
 	<div id="resume" class="wp-block-group" style="margin-top: var(--wp--preset--spacing--100); border-top: 1px solid var(--wp--preset--color--contrast-5); padding-top: var(--wp--preset--spacing--80);">
@@ -73,12 +81,11 @@ title: Home
 		{% for job in resume.workExperience %}
 		<div class="wp-block-columns resume-item">
 			<div class="wp-block-column has-contrast-2-color" style="flex-basis: 30%; font-weight: 500;">
-				<p>{{ job.period }}</p>
+				<p style="margin-bottom: 0.5rem;">{{ job.period }}</p>
+				<p style="margin-bottom: 0.5rem;">{{ job.company }}</p>
+				<p style="margin-bottom: 0.5rem;">{{ job.role }}</p>
 			</div>
 			<div class="wp-block-column">
-				<div class="resume-job-title">
-					<p>{{ job.role }} @ {{ job.company }}</p>
-				</div>
 				<div class="resume-content">
 					<p>{{ job.description }}</p>
 					
@@ -110,7 +117,7 @@ title: Home
 											 width="1200" height="600"
 											 sizes="(min-width: 600px) 600px, 100vw">
 									</a>
-									<figcaption>Platform architectural visualization for high-scale microservices.</figcaption>
+									<figcaption>Platform architectural visualization.</figcaption>
 								</figure>
 								
 								<!-- Two Smaller Images -->
