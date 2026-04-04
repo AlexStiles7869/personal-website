@@ -112,7 +112,7 @@ nav ul {
 .nav-link {
 	text-decoration: none;
 	color: var(--wp--preset--color--contrast-2);
-	font-weight: 400; /* Regular weight for links */
+	font-weight: 400;
 	transition: color 0.1s linear;
 }
 
@@ -123,7 +123,7 @@ nav ul {
 
 .nav-link[aria-current="page"] {
 	color: var(--wp--preset--color--contrast);
-	font-weight: 400; /* Keep it light but change color */
+	font-weight: 400;
 }
 
 /* Site Header Components */
@@ -186,6 +186,33 @@ h2 {
 
 .is-not-stacked-on-mobile {
 	flex-wrap: nowrap !important;
+}
+
+/* Responsive Overrides */
+@media (max-width: 600px) {
+	/* Only stack resume items and main containers, not image grids */
+	.resume-item.wp-block-columns {
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.resume-item .wp-block-column[style*="flex-basis: 30%"] {
+		flex-basis: 100% !important;
+	}
+
+	/* Keep image grids side-by-side but reduce gap */
+	.wp-block-group .wp-block-columns:not(.resume-item) {
+		flex-wrap: nowrap;
+		gap: 12px;
+	}
+
+	/* Mobile Footer: Center and Reverse */
+	.site-footer-content {
+		flex-direction: column-reverse !important;
+		align-items: center !important;
+		text-align: center;
+		gap: 12px;
+	}
 }
 
 /* Image Grid Fix */
