@@ -279,6 +279,22 @@ details.animated-details[open] .details-marker {
 	transform: rotate(90deg);
 }
 
+/* PhotoSwipe Customization */
+.pswp__button--close,
+.pswp__button--zoom,
+.pswp__button--arrow--prev,
+.pswp__button--arrow--next,
+.pswp__preloader {
+	display: none !important;
+}
+
+.pswp__counter {
+	font-family: var(--wp--preset--font-family--system-sans-serif) !important;
+	font-size: var(--wp--preset--font-size--x-small) !important;
+	font-weight: 500;
+	opacity: 0.8;
+}
+
 /* Resume Item Style */
 .resume-item {
 	font-family: var(--wp--preset--font-family--system-sans-serif);
