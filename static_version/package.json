@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "eleventy --serve --host 0.0.0.0",
+    "start": "eleventy --serve",
     "build": "eleventy"
   },
   "dependencies": {

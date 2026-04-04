@@ -4,13 +4,8 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
 export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		// which formats to generate
 		formats: ["avif", "webp", "jpeg"],
-		
-		// widths to generate for all images
 		widths: [400, 800, 1200, "auto"],
-
-		// optional: attributes to add to the generated <picture> or <img>
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",
@@ -19,6 +14,13 @@ export default async function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
+
+	eleventyConfig.setServerOptions({
+		showVersion: true,
+		domDiff: true,
+		port: 8080,
+		host: "0.0.0.0",
+	});
 
 	eleventyConfig.addPassthroughCopy("src/assets");
 
