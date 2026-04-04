@@ -36,3 +36,15 @@
 	--wp--preset--font-family--system-sans-serif: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 	--wp--preset--font-family--system-serif: ui-serif, "Times New Roman", serif;
 }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--wp--preset--color--base: #191716;
+		--wp--preset--color--base-2: #252322;
+		--wp--preset--color--contrast: #FFFFFF;
+		--wp--preset--color--contrast-2: #A0A0A0;
+		--wp--preset--color--contrast-3: #808080;
+		--wp--preset--color--contrast-4: #404040;
+		--wp--preset--color--contrast-5: #302E2D;
+	}
+}
