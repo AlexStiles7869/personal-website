@@ -5,6 +5,11 @@
 			"company": "Tech Solutions Inc.",
 			"role": "Senior Software Engineer",
 			"description": "Lead developer for a high-traffic e-commerce platform. Implemented microservices architecture and automated CI/CD pipelines.",
+			"portraitImages": [
+				"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop",
+				"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=800&fit=crop",
+				"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop"
+			],
 			"images": [
 				"https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=450&fit=crop",
 				"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop",

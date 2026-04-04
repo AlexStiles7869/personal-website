@@ -2,18 +2,27 @@
 layout: layouts/base.njk
 title: Home
 ---
+{% from "components/details.njk" import details %}
 
 <div class="site-content is-layout-constrained" style="padding-top: var(--wp--preset--spacing--80); padding-bottom: var(--wp--preset--spacing--100);">
 	
 	<!-- Intro Block -->
 	<div class="wp-block-group">
-		<h1>Building the future of the web, one static site at a time.</h1>
-		<p class="has-large-font-size">I have a passion for building clean, scalable applications and experimenting with new technologies. This site is a static port of my original WordPress theme.</p>
-		<p>I started my career as a full-stack developer and have since moved into architectural roles, focusing on cloud-native solutions and developer experience. I'm currently exploring the intersection of AI and traditional software engineering.</p>
+		<h1>Hi! I'm Alex</h1>
+		<p class="has-large-font-size">{{ site.about }}</p>
 		
+		{# 
+		<p>I started my career as a full-stack developer and have since moved into architectural roles, focusing on cloud-native solutions and developer experience. I'm currently exploring the intersection of AI and traditional software engineering.</p>
+		#}
+
 		<div class="wp-block-buttons">
 			<div class="wp-block-button">
-				<a class="wp-element-button" href="#resume">View Resume</a>
+				<a class="wp-element-button" href="#resume">
+					View Resume
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</a>
 			</div>
 			<div class="wp-block-button">
 				<a class="wp-element-button is-style-outline" href="mailto:alex@example.com">Get in Touch</a>
@@ -25,16 +34,16 @@ title: Home
 	<div class="wp-block-group alignwide" style="margin-top: var(--wp--preset--spacing--100); margin-bottom: var(--wp--preset--spacing--100);">
 		<!-- Large Image -->
 		<div class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
-			<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" alt="Workspace 1" style="border-radius: 8px; width: 100%;">
+			<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" alt="Workspace 1" class="grid-image-large">
 		</div>
 		
 		<!-- Two Smaller Images side by side -->
 		<div class="wp-block-columns" style="margin-bottom: 0;">
 			<div class="wp-block-column">
-				<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=450&fit=crop" alt="Workspace 2" style="border-radius: 8px; width: 100%;">
+				<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=450&fit=crop" alt="Workspace 2" class="grid-image">
 			</div>
 			<div class="wp-block-column">
-				<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop" alt="Workspace 3" style="border-radius: 8px; width: 100%;">
+				<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop" alt="Workspace 3" class="grid-image">
 			</div>
 		</div>
 	</div>
@@ -55,23 +64,35 @@ title: Home
 				<div class="resume-content">
 					<p>{{ job.description }}</p>
 					
-					{% if job.images %}
-					<div class="wp-block-group" style="margin-top: var(--wp--preset--spacing--40);">
-						<!-- Large Image -->
-						<div class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
-							<img src="{{ job.images[0] }}" alt="{{ job.company }}" style="border-radius: 8px; width: 100%;">
+					{% if job.portraitImages %}
+					<div class="wp-block-columns" style="margin-top: var(--wp--preset--spacing--40); margin-bottom: 0;">
+						{% for img in job.portraitImages %}
+						<div class="wp-block-column">
+							<img src="{{ img }}" alt="{{ job.company }}" class="grid-image-portrait">
 						</div>
-						
-						<!-- Two Smaller Images -->
-						<div class="wp-block-columns" style="margin-bottom: 0;">
-							<div class="wp-block-column">
-								<img src="{{ job.images[1] }}" alt="{{ job.company }}" style="border-radius: 8px; width: 100%;">
-							</div>
-							<div class="wp-block-column">
-								<img src="{{ job.images[2] }}" alt="{{ job.company }}" style="border-radius: 8px; width: 100%;">
-							</div>
-						</div>
+						{% endfor %}
 					</div>
+					{% endif %}
+
+					{% if job.images %}
+						{% call details("View Project Images") %}
+							<div class="wp-block-group">
+								<!-- Large Image -->
+								<div class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
+									<img src="{{ job.images[0] }}" alt="{{ job.company }}" class="grid-image-large">
+								</div>
+								
+								<!-- Two Smaller Images -->
+								<div class="wp-block-columns" style="margin-bottom: 0;">
+									<div class="wp-block-column">
+										<img src="{{ job.images[1] }}" alt="{{ job.company }}" class="grid-image">
+									</div>
+									<div class="wp-block-column">
+										<img src="{{ job.images[2] }}" alt="{{ job.company }}" class="grid-image">
+									</div>
+								</div>
+							</div>
+						{% endcall %}
 					{% endif %}
 				</div>
 			</div>

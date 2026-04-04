@@ -1,8 +1,8 @@
 {
-	"title": "Alex Stiles",
+	"title": "Alex Pulitzer",
 	"tagline": "Software Engineer",
-	"about": "Hi! I’m Alex, a software engineer.",
+	"about": "I’m Alex Pulitzer, a software engineer with a passion for building clean, scalable applications. This site serves as my personal resume, ported from a minimal WordPress theme.",
 	"navigation": [
-		{ "label": "Profile", "url": "/#resume", "hidden": true }
+		{ "label": "Profile", "url": "/" }
 	]
 }

@@ -3,7 +3,7 @@
 		<div class="wp-block-columns is-not-stacked-on-mobile" style="gap: var(--wp--preset--spacing--50); margin-bottom: 0;">
 			
 			<div class="wp-block-column is-vertically-aligned-stretch">
-				<div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; min-height: 128px;">
+				<div style="display: flex; flex-direction: column; gap: var(--wp--preset--spacing--40);">
 					
 					<div style="display: flex; flex-direction: column; gap: var(--wp--preset--spacing--10);">
 						<h1 class="wp-block-site-title"><a href="/" style="text-decoration: none; color: inherit;">{{ site.title }}</a></h1>
@@ -13,9 +13,12 @@
 					<nav class="has-system-sans-serif-font-family has-small-font-size">
 						<ul style="display: flex; list-style: none; padding: 0; margin: 0; gap: var(--wp--preset--spacing--50);">
 							{% for item in site.navigation %}
-							{% if not item.hidden %}
-							<li><a href="{{ item.url }}" style="text-decoration: none; color: var(--wp--preset--color--contrast-2);">{{ item.label }}</a></li>
-							{% endif %}
+							{% set isCurrent = (page.url == item.url) %}
+							<li>
+								<a href="{{ item.url }}" class="nav-link" {% if isCurrent %}aria-current="page"{% endif %}>
+									{{ item.label }}
+								</a>
+							</li>
 							{% endfor %}
 						</ul>
 					</nav>
@@ -23,9 +26,11 @@
 				</div>
 			</div>
 
+			{# 
 			<div class="wp-block-column" style="flex-basis: 128px; flex-grow: 0; display: flex; justify-content: flex-end;">
 				<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=256&h=256&fit=crop" style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%; background: var(--wp--preset--color--contrast-5);" alt="Profile Photo">
 			</div>
+			#}
 
 		</div>
 	</div>

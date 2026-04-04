@@ -58,19 +58,26 @@ a {
 
 /* Buttons */
 .wp-element-button {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
 	background-color: var(--wp--preset--color--contrast);
 	color: var(--wp--preset--color--base);
 	border-radius: 4px;
-	padding: 0.75em 1.25em;
+	padding: 0.9em 1.5em;
 	font-family: var(--wp--preset--font-family--system-sans-serif);
 	font-size: var(--wp--preset--font-size--small);
 	font-weight: 500;
 	text-decoration: none;
-	line-height: 1.5;
+	line-height: 1.2;
 	border: 1px solid var(--wp--preset--color--contrast);
 	cursor: pointer;
 	transition: opacity 0.1s linear;
+}
+
+.wp-element-button svg {
+	display: block;
+	flex-shrink: 0;
 }
 
 .wp-element-button:hover {
@@ -93,6 +100,30 @@ a {
 	gap: 1em;
 	margin-top: var(--wp--preset--spacing--50);
 	margin-bottom: var(--wp--preset--spacing--70);
+}
+
+/* Navigation */
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: var(--wp--preset--color--contrast-2);
+	font-weight: 400; /* Regular weight for links */
+	transition: color 0.1s linear;
+}
+
+.nav-link:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.nav-link[aria-current="page"] {
+	color: var(--wp--preset--color--contrast);
+	font-weight: 400; /* Keep it light but change color */
 }
 
 /* Site Header Components */
@@ -172,10 +203,15 @@ h2 {
 	aspect-ratio: 2 / 1;
 }
 
-/* Animatable Details */
+.grid-image-portrait {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 8px;
+	aspect-ratio: 3 / 4;
+}
+
+/* Details Component */
 details.animated-details {
-	transition: all 0.3s ease-out;
-	overflow: hidden;
 	margin-top: var(--wp--preset--spacing--40);
 }
 
@@ -188,8 +224,9 @@ details.animated-details summary {
 	color: var(--wp--preset--color--contrast-2);
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 6px;
 	user-select: none;
+	line-height: 1;
 }
 
 details.animated-details summary::-webkit-details-marker {
@@ -200,12 +237,14 @@ details.animated-details summary:hover {
 	color: var(--wp--preset--color--contrast);
 }
 
-details.animated-details summary::before {
-	content: "→";
-	transition: transform 0.2s ease;
+.details-marker {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.2s ease-out;
 }
 
-details.animated-details[open] summary::before {
+details.animated-details[open] .details-marker {
 	transform: rotate(90deg);
 }
 
