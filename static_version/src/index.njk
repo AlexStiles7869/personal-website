@@ -34,16 +34,28 @@ title: Home
 	<div class="wp-block-group alignwide" style="margin-top: var(--wp--preset--spacing--100); margin-bottom: var(--wp--preset--spacing--100);">
 		<!-- Large Image -->
 		<div class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
-			<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" alt="Workspace 1" class="grid-image-large">
+			<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" 
+				 alt="Workspace 1" 
+				 class="grid-image-large"
+				 width="1200" height="600"
+				 sizes="(min-width: 820px) 818px, 100vw">
 		</div>
 		
 		<!-- Two Smaller Images side by side -->
 		<div class="wp-block-columns" style="margin-bottom: 0;">
 			<div class="wp-block-column">
-				<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=450&fit=crop" alt="Workspace 2" class="grid-image">
+				<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" 
+					 alt="Workspace 2" 
+					 class="grid-image"
+					 width="600" height="450"
+					 sizes="(min-width: 820px) 400px, 50vw">
 			</div>
 			<div class="wp-block-column">
-				<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop" alt="Workspace 3" class="grid-image">
+				<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600" 
+					 alt="Workspace 3" 
+					 class="grid-image"
+					 width="600" height="450"
+					 sizes="(min-width: 820px) 400px, 50vw">
 			</div>
 		</div>
 	</div>
@@ -68,7 +80,11 @@ title: Home
 					<div class="wp-block-columns" style="margin-top: var(--wp--preset--spacing--40); margin-bottom: 0;">
 						{% for img in job.portraitImages %}
 						<div class="wp-block-column">
-							<img src="{{ img }}" alt="{{ job.company }}" class="grid-image-portrait">
+							<img src="{{ img }}?w=600" 
+								 alt="{{ job.company }}" 
+								 class="grid-image-portrait"
+								 width="600" height="800"
+								 sizes="(min-width: 600px) 260px, 33vw">
 						</div>
 						{% endfor %}
 					</div>
@@ -79,16 +95,28 @@ title: Home
 							<div class="wp-block-group">
 								<!-- Large Image -->
 								<div class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
-									<img src="{{ job.images[0] }}" alt="{{ job.company }}" class="grid-image-large">
+									<img src="{{ job.images[0] }}?w=1200" 
+										 alt="{{ job.company }}" 
+										 class="grid-image-large"
+										 width="1200" height="600"
+										 sizes="(min-width: 600px) 600px, 100vw">
 								</div>
 								
 								<!-- Two Smaller Images -->
 								<div class="wp-block-columns" style="margin-bottom: 0;">
 									<div class="wp-block-column">
-										<img src="{{ job.images[1] }}" alt="{{ job.company }}" class="grid-image">
+										<img src="{{ job.images[1] }}?w=600" 
+											 alt="{{ job.company }}" 
+											 class="grid-image"
+											 width="600" height="450"
+											 sizes="(min-width: 600px) 300px, 50vw">
 									</div>
 									<div class="wp-block-column">
-										<img src="{{ job.images[2] }}" alt="{{ job.company }}" class="grid-image">
+										<img src="{{ job.images[2] }}?w=600" 
+											 alt="{{ job.company }}" 
+											 class="grid-image"
+											 width="600" height="450"
+											 sizes="(min-width: 600px) 300px, 50vw">
 									</div>
 								</div>
 							</div>
