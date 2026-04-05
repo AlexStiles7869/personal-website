@@ -40,5 +40,41 @@
 		
 		lightbox.init();
 	</script>
+
+	<!-- Resume Expandable Logic -->
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const triggers = document.querySelectorAll('.read-more-trigger');
+
+			triggers.forEach(trigger => {
+				trigger.addEventListener('click', () => {
+					const container = trigger.closest('.is-expandable');
+					const inner = container.querySelector('.expand-content-inner');
+					const text = trigger.querySelector('.trigger-text');
+					const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+					// Immediate UI feedback
+					trigger.setAttribute('aria-expanded', !isExpanded);
+					text.textContent = isExpanded ? 'Read More' : 'Read Less';
+
+					if (!isExpanded) {
+						// Expand
+						gsap.to(inner, {
+							height: 'auto',
+							duration: 0.4,
+							ease: 'power2.out'
+						});
+					} else {
+						// Collapse
+						gsap.to(inner, {
+							height: 0,
+							duration: 0.3,
+							ease: 'power2.inOut'
+						});
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>

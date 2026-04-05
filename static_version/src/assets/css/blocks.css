@@ -407,20 +407,39 @@ figure {
 
 .resume-content ul,
 .resume-content ol {
-    list-style-position: inside;
+    list-style-position: outside;
     margin-top: var(--wp--preset--spacing--40);
     margin-bottom: var(--wp--preset--spacing--40);
+    padding-left: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
 }
 
 .resume-content li {
     line-height: 1.5;
+    padding-left: 0.25rem;
 }
 
 /* Zero out figure margin inside column-based galleries so grid-wide-caption
    spacing is controlled solely by its own margin-top */
 .resume-content .wp-block-columns.pswp-gallery .wp-block-image {
     margin-bottom: 0;
+}
+
+/* Expandable Resume Items */
+.resume-content.is-expandable .blurb p:last-child {
+    margin-bottom: 0;
+}
+
+.read-more-trigger:hover {
+    color: var(--wp--preset--color--contrast) !important;
+}
+
+.read-more-trigger[aria-expanded="true"] .trigger-icon {
+    transform: rotate(180deg);
+}
+
+.expand-content-inner {
+    will-change: height, opacity;
 }

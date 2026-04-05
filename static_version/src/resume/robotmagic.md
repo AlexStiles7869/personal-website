@@ -8,6 +8,8 @@ role: Intern Web Developer
 
 Worked as a part-time contractor across multiple engagements to explore and prototype new directions for the RobotMagic platform, with a focus on computer science education and interactive product experiences.
 
+[[MORE]]
+
 -   Developed a new landing site using [Nuxt]() (Vue), achieving a 280% increase in impressions during testing.
 -   Built and structured computer science course content aligned with AU, NZ, and UK curricula.
 -   Scoped and prototyped a gamified user experience, centred around an interactive profile dashboard.
