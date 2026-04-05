@@ -17,7 +17,7 @@ export default async function(eleventyConfig) {
 		formats: ["avif", "webp", "jpeg"],
 		widths: [400, 800, 1200, "auto"],
 		urlPath: "/img/",
-		outputDir: "./_site/img/",
+		outputDir: "img", // Relative to output directory (_site)
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",
