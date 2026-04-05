@@ -72,8 +72,35 @@ export default async function(eleventyConfig) {
 		return shortcodeEnv.render("shortcodes/details.njk", { summary, content });
 	});
 
+	eleventyConfig.addFilter("beforeMore", (content) => {
+		const marker = "[[MORE]]";
+		const pMarker = `<p>${marker}</p>`;
+		
+		let index = content.indexOf(pMarker);
+		if (index !== -1) return content.substring(0, index).trim();
+		
+		index = content.indexOf(marker);
+		if (index !== -1) return content.substring(0, index).trim();
+		
+		return content; // If no marker, return full content as excerpt
+	});
+
+	eleventyConfig.addFilter("afterMore", (content) => {
+		const marker = "[[MORE]]";
+		const pMarker = `<p>${marker}</p>`;
+		
+		let index = content.indexOf(pMarker);
+		if (index !== -1) return content.substring(index + pMarker.length).trim();
+		
+		index = content.indexOf(marker);
+		if (index !== -1) return content.substring(index + marker.length).trim();
+		
+		return ""; // If no marker, nothing to expand
+	});
+
 	return {
 		markdownTemplateEngine: "njk",
+		htmlTemplateEngine: "njk",
 		dir: {
 			input: "src",
 			output: "_site",

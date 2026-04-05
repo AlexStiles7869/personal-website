@@ -87,8 +87,28 @@ title: Home
 				<p class="has-contrast-2-color" style="margin-top: 0; margin-bottom: 0; font-size: var(--wp--preset--font-size--x-small); font-weight: 500; line-height: 1.4;">{{ job.data.company }}</p>
 			</div>
 			<div class="wp-block-column">
-				<div class="resume-content">
-					{{ job.content | safe }}
+				{% set isExpandable = "[[MORE]]" in job.content %}
+				<div class="resume-content {% if isExpandable %}is-expandable{% endif %}">
+					{% if isExpandable %}
+						<div class="blurb">
+							{{ job.content | beforeMore | safe }}
+						</div>
+						<div class="expandable-trigger-wrapper" style="margin-top: 10px;">
+							<button class="read-more-trigger" aria-expanded="false" style="background: none; border: none; padding: 0; color: var(--wp--preset--color--contrast-2); font-family: var(--wp--preset--font-family--system-sans-serif); font-size: 13px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: color 0.2s ease;">
+								<span class="trigger-text">Read More</span>
+								<svg class="trigger-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.3s ease;">
+									<path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</button>
+						</div>
+						<div class="expand-content-inner" style="height: 0; overflow: hidden;">
+							<div class="expand-content-padding" style="padding-top: 4px;">
+								{{ job.content | afterMore | safe }}
+							</div>
+						</div>
+					{% else %}
+						{{ job.content | safe }}
+					{% endif %}
 				</div>
 			</div>
 		</div>
