@@ -2,6 +2,7 @@
     "workExperience": [
         {
             "period": "Feb 2026 – Present",
+            "location": "Sydney, NSW",
             "company": "Commonwealth Bank of Australia",
             "role": "Software Engineer",
             "description": "Lead developer for a high-traffic e-commerce platform. Implemented microservices architecture and automated CI/CD pipelines.",
@@ -18,6 +19,7 @@
         },
         {
             "period": "Feb 2025 – Feb 2026",
+            "location": "Melbourne, VIC",
             "company": "Commonwealth Bank of Australia",
             "role": "Graduate Software Engineer",
             "description": "Developed and maintained dozens of client websites using React, Node.js, and various CMS platforms including WordPress."

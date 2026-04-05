@@ -217,7 +217,7 @@ h2 {
 @media (max-width: 600px) {
     .resume-item.wp-block-columns {
         flex-direction: column;
-        gap: 8px;
+        gap: 24px;
     }
 
     .resume-item .wp-block-column[style*="flex-basis: 30%"] {
@@ -385,6 +385,11 @@ figure {
 .resume-item {
     font-family: var(--wp--preset--font-family--system-sans-serif);
     font-size: var(--wp--preset--font-size--small);
+    margin-bottom: var(--wp--preset--spacing--80);
+}
+
+.resume-item:last-child {
+    margin-bottom: 0;
 }
 
 .resume-job-title {
