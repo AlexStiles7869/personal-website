@@ -6,14 +6,14 @@ company: Commonwealth Bank of Australia
 role: Software Engineer
 ---
 
-<!-- {% portraitGrid
-  "Summit, forest trail, and mountain range.",
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4", "Summit above the clouds.",
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e", "Old growth forest trail.",
-  "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5", "Misty mountain range."
+{% portraitGrid
+  "CommBank app money management features",
+  "https://www.commbank.com.au/content/dam/commbank-assets/digital-banking/2024/MP-Spend_howto.jpg", "Weekly spending",
+  "https://www.commbank.com.au/content/dam/commbank-assets/digital-banking/2024/cash-flow_howto.jpg", "Cashflow breakdown",
+  "/assets/images/category-budgets_howto.jpg", "Category budgets"
 %}
 
-{% details "View Project Images" %}
+<!-- {% details "View Project Images" %}
   {% imageGallery
     "Architecture and data visualizations.",
     "https://images.unsplash.com/photo-1469474968028-56623f02e42e", "Platform architectural visualization.",

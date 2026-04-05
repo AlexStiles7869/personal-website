@@ -1,8 +1,8 @@
 <div class="wp-block-group pswp-gallery">
   {%- if wideUrl %}
   <figure class="wp-block-image" style="margin-bottom: var(--wp--preset--spacing--50);">
-    <a href="{{ wideUrl }}?w=2400&h=1200&fit=crop" class="pswp-link" data-pswp-width="2400" data-pswp-height="1200" target="_blank">
-      <img src="{{ wideUrl }}?w=1200&h=600&fit=crop" alt="" class="grid-image-large" width="1200" height="600" sizes="(min-width: 600px) 600px, 100vw">
+    <a href="{{ wideUrl }}" class="pswp-link" target="_blank">
+      <img src="{{ wideUrl }}" alt="" class="grid-image-large" sizes="(min-width: 600px) 600px, 100vw">
     </a>
     {%- if wideCaption %}
     <figcaption>{{ wideCaption }}</figcaption>
@@ -13,8 +13,8 @@
   <div class="wp-block-columns" style="margin-bottom: 0;">
     {%- for url in smallUrls %}
     <div class="wp-block-column">
-      <a href="{{ url }}?w=2000&h=1500&fit=crop" class="pswp-link" data-pswp-width="2000" data-pswp-height="1500" target="_blank">
-        <img src="{{ url }}?w=600&h=450&fit=crop" alt="" class="grid-image" width="600" height="450" sizes="(min-width: 600px) 300px, 50vw">
+      <a href="{{ url }}" class="pswp-link" target="_blank">
+        <img src="{{ url }}" alt="" class="grid-image" sizes="(min-width: 600px) 300px, 50vw">
       </a>
     </div>
     {%- endfor %}

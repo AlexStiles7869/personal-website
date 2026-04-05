@@ -2,8 +2,8 @@
   {%- for image in images %}
   <div class="wp-block-column">
     <figure class="wp-block-image">
-      <a href="{{ image.url }}?w=1500&h=2000&fit=crop" class="pswp-link" data-pswp-width="1500" data-pswp-height="2000" target="_blank">
-        <img src="{{ image.url }}?w=600&h=800&fit=crop" alt="" class="grid-image-portrait" width="600" height="800" sizes="(min-width: 600px) 260px, 33vw">
+      <a href="{{ image.url }}" class="pswp-link" target="_blank">
+        <img src="{{ image.url }}" alt="" class="grid-image-portrait" sizes="(min-width: 600px) 260px, 33vw">
       </a>
       {%- if image.caption %}
       <figcaption>{{ image.caption }}</figcaption>

@@ -37,6 +37,35 @@
 			children: 'a.pswp-link',
 			pswpModule: () => import('https://unpkg.com/photoswipe@5.4.3/dist/photoswipe.esm.js')
 		});
+
+		// Remote Image Aspect Ratio Fix:
+		// Since remote images don't go through Eleventy's build process, we don't know their 
+		// dimensions at build time. PhotoSwipe needs these to prevent "smushing".
+		// We calculate the ratio from the thumbnail and set large virtual dimensions 
+		// to allow PhotoSwipe to scale the image up to fill the screen.
+		const updateDims = (img) => {
+			const link = img.closest('a.pswp-link');
+			if (link && img.naturalWidth && img.naturalHeight) {
+				const ratio = img.naturalWidth / img.naturalHeight;
+				// Use the max of window dimensions as the target long edge
+				const targetLongEdge = Math.max(window.innerWidth, window.innerHeight) * window.devicePixelRatio;
+				
+				if (ratio > 1) {
+					// Landscape
+					link.setAttribute('data-pswp-width', Math.round(targetLongEdge));
+					link.setAttribute('data-pswp-height', Math.round(targetLongEdge / ratio));
+				} else {
+					// Portrait
+					link.setAttribute('data-pswp-height', Math.round(targetLongEdge));
+					link.setAttribute('data-pswp-width', Math.round(targetLongEdge * ratio));
+				}
+			}
+		};
+
+		document.querySelectorAll('.pswp-gallery img').forEach(img => {
+			if (img.complete) updateDims(img);
+			else img.addEventListener('load', () => updateDims(img));
+		});
 		
 		lightbox.init();
 	</script>

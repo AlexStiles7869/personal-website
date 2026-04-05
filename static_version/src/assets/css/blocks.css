@@ -266,21 +266,21 @@ h2 {
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
 }
 
 .grid-image-large {
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: auto;
 }
 
 .grid-image-portrait {
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: auto;
 }
 
 /* Details Component */
