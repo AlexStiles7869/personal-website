@@ -245,7 +245,7 @@ h2 {
 
     .grid-wide-caption {
         display: block !important;
-        margin-top: -18px !important;
+        margin-top: 6px;
     }
 }
 
@@ -403,4 +403,24 @@ figure {
 
 .resume-content {
     line-height: 1.6;
+}
+
+.resume-content ul,
+.resume-content ol {
+    list-style-position: inside;
+    margin-top: var(--wp--preset--spacing--40);
+    margin-bottom: var(--wp--preset--spacing--40);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.resume-content li {
+    line-height: 1.5;
+}
+
+/* Zero out figure margin inside column-based galleries so grid-wide-caption
+   spacing is controlled solely by its own margin-top */
+.resume-content .wp-block-columns.pswp-gallery .wp-block-image {
+    margin-bottom: 0;
 }
