@@ -16,6 +16,8 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		formats: ["avif", "webp", "jpeg"],
 		widths: [400, 800, 1200, "auto"],
+		urlPath: "/img/",
+		outputDir: "./_site/img/",
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",
