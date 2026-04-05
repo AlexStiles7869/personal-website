@@ -6,9 +6,7 @@ company: Commonwealth Bank of Australia
 role: Software Engineer
 ---
 
-Lead developer for a high-traffic e-commerce platform. Implemented microservices architecture and automated CI/CD pipelines.
-
-{% portraitGrid
+<!-- {% portraitGrid
   "Summit, forest trail, and mountain range.",
   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4", "Summit above the clouds.",
   "https://images.unsplash.com/photo-1441974231531-c6227db76b6e", "Old growth forest trail.",
@@ -22,4 +20,4 @@ Lead developer for a high-traffic e-commerce platform. Implemented microservices
     "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
     "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d"
   %}
-{% enddetails %}
+{% enddetails %} -->
