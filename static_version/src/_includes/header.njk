@@ -10,11 +10,12 @@
 						<p class="wp-block-site-tagline">{{ site.tagline }}</p>
 					</div>
 
-					<nav class="has-system-sans-serif-font-family has-small-font-size">
-						<ul style="display: flex; list-style: none; padding: 0; margin: 0; gap: var(--wp--preset--spacing--50);">
+					<nav class="nav-pill-container has-system-sans-serif-font-family">
+						<div class="nav-pill-background" id="nav-pill-bg"></div>
+						<ul class="nav-pill-list">
 							{% for item in site.navigation %}
 							{% set isCurrent = (page.url == item.url) %}
-							<li>
+							<li class="nav-pill-item" {% if isCurrent %}data-active="true"{% endif %}>
 								<a href="{{ item.url }}" class="nav-link" {% if isCurrent %}aria-current="page"{% endif %}>
 									{{ item.label }}
 								</a>
@@ -22,6 +23,120 @@
 							{% endfor %}
 						</ul>
 					</nav>
+					
+					<style>
+						.nav-pill-container {
+							position: relative;
+							display: inline-flex;
+							width: max-content;
+							align-self: flex-start;
+							background: rgba(128, 128, 128, 0.15); /* Outer opacity background */
+							border: 1px solid rgba(128, 128, 128, 0.2); /* Group border */
+							backdrop-filter: blur(8px);
+							-webkit-backdrop-filter: blur(8px);
+							padding: 4px;
+							border-radius: 9999px; /* Nice rounded pill aesthetic */
+						}
+
+						.nav-pill-list {
+							display: flex;
+							list-style: none;
+							padding: 0;
+							margin: 0;
+							gap: 0.5rem;
+							position: relative;
+							z-index: 1; /* Above the background pill */
+						}
+
+						.nav-pill-item {
+							position: relative;
+							z-index: 2;
+						}
+
+						.nav-pill-item .nav-link {
+							display: block;
+							padding: 8px 20px;
+							color: var(--wp--preset--color--contrast);
+							text-decoration: none;
+							font-weight: 500;
+							font-size: 0.85rem;
+							border-radius: 9999px;
+							transition: opacity 0.3s ease, color 0.3s ease;
+							line-height: 1;
+							opacity: 0.6; /* Unactive state */
+						}
+
+						.nav-pill-container:not(:hover) .nav-pill-item[data-active="true"] .nav-link,
+						.nav-pill-item:hover .nav-link {
+							opacity: 1; /* Active/Hovered state */
+						}
+
+						.nav-pill-background {
+							position: absolute;
+							box-sizing: border-box;
+							top: 4px;
+							bottom: 4px;
+							left: var(--pill-left, 4px);
+							width: var(--pill-width, 0px);
+							background: rgba(128, 128, 128, 0.25); /* Inner opacity background for sliding pill */
+							border: 1px solid rgba(128, 128, 128, 0.3); /* Individual pill border */
+							border-radius: 9999px;
+							opacity: 0; /* Hidden initially until JavaScript calculates the bounding box */
+							transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+							z-index: 0;
+						}
+					</style>
+
+					<script>
+					document.addEventListener('DOMContentLoaded', () => {
+						const container = document.querySelector('.nav-pill-container');
+						const bg = document.getElementById('nav-pill-bg');
+						const items = document.querySelectorAll('.nav-pill-item');
+						let activeItem = document.querySelector('.nav-pill-item[data-active="true"]');
+						if (!activeItem && items.length > 0) activeItem = items[0];
+						
+						// Disable animation initially so it snaps to the active tag behind the scenes
+						bg.style.transition = 'none';
+						
+						function updatePill(elem) {
+							if (!elem) return;
+							const containerRect = container.getBoundingClientRect();
+							const elemRect = elem.getBoundingClientRect();
+							// Calculate relative left offset, subtracting 1px for the container border
+							const left = elemRect.left - containerRect.left - 1;
+							bg.style.setProperty('--pill-left', `${left}px`);
+							bg.style.setProperty('--pill-width', `${elemRect.width}px`);
+						}
+						
+						// Initial layout calculation done invisibly
+						updatePill(activeItem);
+						
+						// Use timeout to ensure custom fonts are fully loaded, then fade in the pill
+						setTimeout(() => {
+							updatePill(activeItem);
+							bg.offsetHeight; // Force a browser reflow before restoring the transition
+							bg.style.transition = ''; // Fallback to CSS transitions
+							bg.style.opacity = '1'; // Fade the pill into existence
+						}, 100);
+						
+						items.forEach(item => {
+							item.addEventListener('mouseenter', () => updatePill(item));
+						});
+						
+						container.addEventListener('mouseleave', () => {
+							updatePill(activeItem);
+						});
+						
+						window.addEventListener('resize', () => {
+							const currentHovered = container.querySelector(':hover');
+							if (currentHovered && currentHovered.closest('.nav-pill-item')) {
+								updatePill(currentHovered.closest('.nav-pill-item'));
+							} else {
+								updatePill(activeItem);
+							}
+						});
+					});
+					</script>
 
 				</div>
 			</div>

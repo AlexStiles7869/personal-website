@@ -3,6 +3,7 @@
 	"tagline": "Software Engineer",
 	"about": "I am a Software Engineer specializing in distributed systems, currently building SENSE—a high-scale, low-latency real-time cache for CBA's retail bank. My work focuses on ingesting tens of millions of transactions daily using Java, Flink, and Cassandra to drive seamless customer experiences.",
 	"navigation": [
-		{ "label": "Profile", "url": "/" }
+		{ "label": "Profile", "url": "/" },
+		{ "label": "Blog", "url": "/blog/" }
 	]
 }
