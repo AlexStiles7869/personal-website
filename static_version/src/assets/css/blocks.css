@@ -443,3 +443,12 @@ figure {
 .expand-content-inner {
     will-change: height, opacity;
 }
+
+@media (max-width: 600px) {
+    .read-more-trigger {
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+}
