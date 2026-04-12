@@ -54,6 +54,10 @@ a:hover {
     text-decoration: underline dotted;
 }
 
+.wp-element-button:hover {
+    text-decoration: none !important;
+}
+
 /* Layout System */
 .is-layout-constrained > :not(.alignwide):not(.alignfull) {
     max-width: 608px;
