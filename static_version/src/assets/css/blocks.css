@@ -33,7 +33,7 @@ img {
 }
 
 body {
-    background-color: var(--wp--preset--color--base);
+    background-color: var(--wp--preset--color--base-2);
     color: var(--wp--preset--color--contrast);
     font-family: var(--wp--preset--font-family--body);
     font-size: var(--wp--preset--font-size--medium);
@@ -382,10 +382,22 @@ figure {
 }
 
 /* Resume Item Style */
+/* Resume Item Card Style */
 .resume-item {
+    background: var(--wp--preset--color--base);
+    border: 1px solid var(--wp--preset--color--contrast-5);
+    border-radius: 0.5rem;
+    padding: var(--wp--preset--spacing--60);
+    margin-bottom: var(--wp--preset--spacing--50);
     font-family: var(--wp--preset--font-family--system-sans-serif);
     font-size: var(--wp--preset--font-size--small);
-    margin-bottom: var(--wp--preset--spacing--80);
+}
+
+@media (max-width: 600px) {
+    .resume-item {
+        padding: var(--wp--preset--spacing--50);
+        margin-bottom: var(--wp--preset--spacing--40);
+    }
 }
 
 .resume-item:last-child {
