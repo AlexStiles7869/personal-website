@@ -98,7 +98,17 @@ title: Home
 			<div class="wp-block-column" style="flex-basis: 30%;">
 				<p class="has-contrast-2-color" style="margin-top: 0; margin-bottom: 8px; font-size: var(--wp--preset--font-size--x-small); font-weight: 400; line-height: 1.4;">{{ job.data.period | replace(" / ", " &middot; <br>") | safe }} &middot; <br>{{ job.data.location }}</p>
 				<p style="margin-top: 0; margin-bottom: 8px; font-size: var(--wp--preset--font-size--small); font-weight: 600; color: var(--wp--preset--color--contrast); line-height: 1.2;">{{ job.data.role }}</p>
-				<p class="has-contrast-2-color" style="margin-top: 0; margin-bottom: 0; font-size: var(--wp--preset--font-size--x-small); font-weight: 500; line-height: 1.4;">{{ job.data.company }}</p>
+				<p class="has-contrast-2-color" style="margin-top: 0; margin-bottom: 0; font-size: var(--wp--preset--font-size--x-small); font-weight: 500; line-height: 1.4;">
+					{% if job.data.url %}
+					<a href="{{ job.data.url }}" target="_blank" rel="noopener noreferrer" class="external-link">
+						{{ job.data.company }}<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</a>
+					{% else %}
+					{{ job.data.company }}
+					{% endif %}
+				</p>
 			</div>
 			<div class="wp-block-column">
 				{% set isExpandable = "[[MORE]]" in job.content %}

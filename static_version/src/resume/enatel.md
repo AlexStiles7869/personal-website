@@ -3,6 +3,7 @@ date: 2022-11-01
 period: Nov 2022 – Feb 2023
 location: Christchurch, NZ
 company: Enatel
+url: https://www.enatel.net
 role: Intern Embedded Systems Engineer
 ---
 

@@ -452,3 +452,26 @@ figure {
         padding-bottom: 8px !important;
     }
 }
+
+.external-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline;
+    transition: color 0.1s linear;
+}
+
+.external-link:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 2px;
+}
+
+.external-link svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 3px;
+    position: relative;
+    top: -1px;
+    width: 1em;
+    height: 1em;
+}

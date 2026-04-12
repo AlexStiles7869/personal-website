@@ -3,6 +3,7 @@ date: 2021-12-01
 period: Dec 2021 – Feb 2022 / Nov 2023 – Mar 2024
 location: Christchurch, NZ
 company: RobotMagic
+url: https://robotmagic.org
 role: Intern Web Developer
 ---
 
