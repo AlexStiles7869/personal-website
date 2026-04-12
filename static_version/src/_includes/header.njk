@@ -83,6 +83,7 @@
 							opacity: 1;
 						}
 
+
 						.nav-pill-background {
 							position: absolute;
 							box-sizing: border-box;
@@ -146,12 +147,20 @@
 							});
 						}
 
-						// Interactions
+						// Detect touch-primary devices via genuine touchstart (never synthesized for mouse).
+						// We gate ALL GSAP animations with this — mobile gets zero hover animation.
+						let isTouchDevice = false;
+						window.addEventListener('touchstart', () => { isTouchDevice = true; }, { once: true, passive: true });
+
 						items.forEach(item => {
-							item.addEventListener('mouseenter', () => updatePill(item));
+							item.addEventListener('mouseenter', () => {
+								if (isTouchDevice) return;
+								updatePill(item);
+							});
 						});
 
 						container.addEventListener('mouseleave', () => {
+							if (isTouchDevice) return;
 							updatePill(activeItem);
 						});
 

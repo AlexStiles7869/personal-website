@@ -462,7 +462,7 @@ figure {
 
 .external-link:hover {
     text-decoration: underline;
-    text-decoration-style: wavy;
+    text-decoration-style: dotted;
     text-underline-offset: 2px;
 }
 
