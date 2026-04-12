@@ -5,5 +5,10 @@
 	"navigation": [
 		{ "label": "Profile", "url": "/" },
 		{ "label": "Blog", "url": "/blog/" }
+	],
+	"socials": [
+		{ "label": "LinkedIn", "url": "https://linkedin.com/" },
+		{ "label": "Instagram", "url": "https://instagram.com/" },
+		{ "label": "X", "url": "https://x.com/" }
 	]
 }
