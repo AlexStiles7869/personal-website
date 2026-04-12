@@ -504,5 +504,10 @@ figure {
     visibility: hidden;
 }
 
+.skill-link {
+    text-decoration: underline dotted;
+    color: inherit;
+}
+
 /* Base positions for JS to animate from/to */
 /* Note: We will handle visibility and transform via GSAP */

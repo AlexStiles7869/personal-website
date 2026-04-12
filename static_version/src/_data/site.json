@@ -1,7 +1,7 @@
 {
 	"title": "Alex Stiles",
 	"tagline": "Software Engineer",
-	"about": "I am a Software Engineer specializing in distributed systems, currently helping to build SENSE—a high-scale, low-latency real-time data platform for CBA's retail bank. My work focuses on ingesting & processing tens of millions of transactions daily using Java, Kafka, Flink, Cassandra, and Kubernetes to drive seamless customer experiences.",
+	"about": "I am a Software Engineer specializing in distributed systems, currently helping to build SENSE—a high-scale, low-latency real-time data platform for CBA's retail bank. My work focuses on ingesting & processing tens of millions of transactions daily using <a href=\"https://java.com\" class=\"skill-link\">Java</a>, <a href=\"https://kafka.apache.org\" class=\"skill-link\">Kafka</a>, <a href=\"https://flink.apache.org\" class=\"skill-link\">Flink</a>, <a href=\"https://cassandra.apache.org\" class=\"skill-link\">Cassandra</a>, and <a href=\"https://kubernetes.io\" class=\"skill-link\">Kubernetes</a> to drive seamless customer experiences.",
 	"navigation": [
 		{ "label": "Profile", "url": "/" },
 		{ "label": "Blog", "url": "/blog/" }
