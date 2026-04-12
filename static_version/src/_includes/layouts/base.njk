@@ -103,6 +103,52 @@
 					}
 				});
 			});
+
+			/* --- Arrow Conveyor Logic (GSAP) --- */
+			const arrowParents = document.querySelectorAll('.external-link, .wp-element-button');
+			
+			const animateLoop = (el, type) => {
+				if (el._isAnimating) return;
+				el._isAnimating = true;
+
+				const container = el.querySelector('.icon-loop');
+				const primary = container?.querySelector('svg:not(.icon-clone)');
+				const clone = container?.querySelector('.icon-clone');
+				
+				// Special case: Download arrow (South)
+				const dlPrimary = el.querySelector('.dl-arrow-primary');
+				const dlClone = el.querySelector('.dl-arrow-clone');
+
+				const tl = gsap.timeline({
+					onComplete: () => { el._isAnimating = false; }
+				});
+
+				const ease = "power2.inOut";
+
+				if (type === 'ne' && primary && clone) {
+					gsap.set(primary, { xPercent: 0, yPercent: 0, force3D: false });
+					gsap.set(clone, { visibility: 'visible', xPercent: -100, yPercent: 100, force3D: false });
+					tl.to(primary, { xPercent: 100, yPercent: -100, duration: 0.5, ease });
+					tl.to(clone, { xPercent: 0, yPercent: 0, duration: 0.5, ease }, 0);
+				} else if (type === 'e' && primary && clone) {
+					gsap.set(primary, { xPercent: 0, yPercent: 0, force3D: false });
+					gsap.set(clone, { visibility: 'visible', xPercent: -100, yPercent: 0, force3D: false });
+					tl.to(primary, { xPercent: 100, yPercent: 0, duration: 0.5, ease });
+					tl.to(clone, { xPercent: 0, yPercent: 0, duration: 0.5, ease }, 0);
+				} else if (type === 's' && dlPrimary && dlClone) {
+					gsap.set(dlPrimary, { y: 0, force3D: false });
+					tl.to(dlPrimary, { y: 24, duration: 0.4, ease });
+					tl.fromTo(dlClone, { y: -24, force3D: false }, { y: 0, duration: 0.4, ease }, 0);
+				}
+			};
+
+			arrowParents.forEach(parent => {
+				parent.addEventListener('mouseenter', () => {
+					if (parent.querySelector('.icon-loop--ne')) animateLoop(parent, 'ne');
+					else if (parent.querySelector('.icon-loop--e')) animateLoop(parent, 'e');
+					else if (parent.querySelector('.dl-arrow-primary')) animateLoop(parent, 's');
+				});
+			});
 		});
 	</script>
 </body>
