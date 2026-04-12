@@ -25,10 +25,15 @@
 	--wp--preset--spacing--40: 16px;
 	--wp--preset--spacing--50: 24px;
 	--wp--preset--spacing--60: 32px;
-	--wp--preset--spacing--70: clamp(32px, 4.8vw, 48px);
-	--wp--preset--spacing--80: clamp(48px, 6.4vw, 64px);
-	--wp--preset--spacing--90: clamp(64px, 9.6vw, 96px);
-	--wp--preset--spacing--100: clamp(64px, 12.8vw, 128px);
+	/* Original max bounds tightened for reduced desktop gaps */
+	/* old: clamp(32px, 4.8vw, 48px) */
+	--wp--preset--spacing--70: clamp(32px, 4.8vw, 36px);
+	/* old: clamp(48px, 6.4vw, 64px) */
+	--wp--preset--spacing--80: clamp(48px, 6.4vw, 48px);
+	/* old: clamp(64px, 9.6vw, 96px) */
+	--wp--preset--spacing--90: clamp(64px, 9.6vw, 72px);
+	/* old: clamp(64px, 12.8vw, 128px) */
+	--wp--preset--spacing--100: clamp(64px, 12.8vw, 80px);
 	--wp--preset--spacing--body-margin: 24px;
 
 	/* Typography */
