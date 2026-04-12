@@ -83,6 +83,16 @@
 							opacity: 1;
 						}
 
+						/* Suppress native WebKit tap highlight (renders outside pill bounds).
+						   Replace with :active background bounded by element's own border-radius */
+						.nav-pill-item .nav-link {
+							-webkit-tap-highlight-color: transparent;
+						}
+						@media (hover: none) and (pointer: coarse) {
+							.nav-pill-item .nav-link:active {
+								background: rgba(128, 128, 128, 0.2);
+							}
+						}
 
 						.nav-pill-background {
 							position: absolute;
