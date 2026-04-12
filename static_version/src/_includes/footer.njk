@@ -4,7 +4,7 @@
 			<p style="margin-bottom: 0;">© 2026 {{ site.title }}</p>
 			<div style="display: flex; gap: 16px;">
 				{% for social in site.socials %}
-				<a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">{{ social.label }}</a>
+				<a href="{{ social.url }}" target="_blank" rel="noopener noreferrer">{{ social.label }}</a>
 				{% endfor %}
 			</div>
 		</div>
