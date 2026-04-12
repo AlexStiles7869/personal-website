@@ -45,9 +45,13 @@ body {
 
 a {
     color: inherit;
-    transition:
-        opacity 0.1s linear,
-        color 0.1s linear;
+    text-decoration: none;
+    transition: opacity 0.1s linear, color 0.1s linear, text-decoration 0.1s linear;
+}
+
+/* Base link hover style: dotted underline */
+a:hover {
+    text-decoration: underline dotted;
 }
 
 /* Layout System */
@@ -403,6 +407,10 @@ figure {
 
 .resume-content {
     line-height: 1.6;
+}
+
+.resume-content a {
+    text-decoration: underline dotted;
 }
 
 .resume-content ul,
