@@ -15,11 +15,20 @@
 						<ul class="nav-pill-list">
 							{% for item in site.navigation %}
 							{% set isCurrent = (page.url == item.url) %}
+							{% set isBlog = (item.url == '/blog/') %}
+							{% if isBlog and flags.blogPage == false %}
+							<li class="nav-pill-item" style="pointer-events: none;">
+								<span class="nav-link" style="cursor: default;">
+									{{ item.label }}
+								</span>
+							</li>
+							{% else %}
 							<li class="nav-pill-item" {% if isCurrent %}data-active="true"{% endif %}>
 								<a href="{{ item.url }}" class="nav-link" {% if isCurrent %}aria-current="page"{% endif %}>
 									{{ item.label }}
 								</a>
 							</li>
+							{% endif %}
 							{% endfor %}
 						</ul>
 					</nav>
@@ -64,10 +73,12 @@
 							transition: opacity 0.3s ease;
 							line-height: 1;
 							opacity: 0.5;
+							-webkit-user-select: none;
+							user-select: none;
 						}
 
 						/* Active/Hover states */
-						.nav-pill-container:not(:hover) .nav-pill-item[data-active="true"] .nav-link,
+						.nav-pill-container:not(:has(.nav-pill-item:hover)) .nav-pill-item[data-active="true"] .nav-link,
 						.nav-pill-item:hover .nav-link {
 							opacity: 1;
 						}

@@ -13,6 +13,16 @@ const shortcodeEnv = new nunjucks.Environment(
 );
 
 export default async function(eleventyConfig) {
+	let resumeButton = true;
+	let blogPage = true;
+	for (let i = 0; i < process.argv.length; i++) {
+		if (process.argv[i] === '--resume-button=false') resumeButton = false;
+		if (process.argv[i] === '--resume-button' && process.argv[i+1] === 'false') resumeButton = false;
+		if (process.argv[i] === '--blog-page=false') blogPage = false;
+		if (process.argv[i] === '--blog-page' && process.argv[i+1] === 'false') blogPage = false;
+	}
+	eleventyConfig.addGlobalData("flags", { resumeButton, blogPage });
+
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		formats: ["avif", "webp", "jpeg"],
 		widths: [400, 800, 1200, "auto"],
