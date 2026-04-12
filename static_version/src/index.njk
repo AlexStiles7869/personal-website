@@ -91,7 +91,7 @@ title: Home
 		{% for job in sortedResume %}
 		<div class="wp-block-columns resume-item" {% if not loop.last %}style="margin-bottom: var(--wp--preset--spacing--80);"{% endif %}>
 			<div class="wp-block-column" style="flex-basis: 30%;">
-				<p class="has-contrast-2-color" style="margin-top: 0; margin-bottom: 8px; font-size: var(--wp--preset--font-size--x-small); font-weight: 400;">{{ job.data.period }} &middot; {{ job.data.location }}</p>
+				<p class="has-contrast-2-color" style="margin-top: 0; margin-bottom: 8px; font-size: var(--wp--preset--font-size--x-small); font-weight: 400; line-height: 1.4;">{{ job.data.period | replace(" / ", " &middot; <br>") | safe }} &middot; <br>{{ job.data.location }}</p>
 				<p style="margin-top: 0; margin-bottom: 8px; font-size: var(--wp--preset--font-size--small); font-weight: 600; color: var(--wp--preset--color--contrast); line-height: 1.2;">{{ job.data.role }}</p>
 				<p class="has-contrast-2-color" style="margin-top: 0; margin-bottom: 0; font-size: var(--wp--preset--font-size--x-small); font-weight: 500; line-height: 1.4;">{{ job.data.company }}</p>
 			</div>
