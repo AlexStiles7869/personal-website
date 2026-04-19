@@ -1,10 +1,10 @@
 ---
 date: 2021-12-01
-period: Dec 2021 – Feb 2022 / Nov 2023 – Mar 2024
+period: Nov 2021 – Feb 2022 / Nov 2023 – Mar 2024
 location: Christchurch, NZ
 company: RobotMagic
 url: https://robotmagic.org
-role: Intern Web Developer
+role: Web Developer
 ---
 
 Worked as a part-time contractor across multiple engagements to explore and prototype new directions for the RobotMagic platform, with a focus on computer science education and interactive product experiences.
