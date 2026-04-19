@@ -429,6 +429,19 @@ figure {
     text-decoration: underline dotted;
 }
 
+.resume-content code {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 0.85em;
+    background-color: var(--wp--preset--color--contrast-5);
+    color: var(--wp--preset--color--contrast-2);
+    border-radius: 3px;
+    padding: 0.1em 0.35em;
+}
+
+.resume-content strong {
+    font-weight: 500;
+}
+
 .resume-content ul,
 .resume-content ol {
     list-style-position: outside;

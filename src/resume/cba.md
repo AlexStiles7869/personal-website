@@ -7,5 +7,5 @@ url: https://www.commbank.com.au
 role: Software Engineer
 ---
 
--   Designed and am completing implementation of dynamic Keyspaces provisioning across distributed batch workloads, coordinating global state across batch loader pods via EFS-based mutex, with table provisioning lifecycles tied to Flink job execution. Projected to reduce Keyspaces spend by 20% or ~$120K annually across targeted high-cost tables, based on cost modelling (p95) of batch-driven table access patterns.
+-   Designed and am completing implementation of dynamic Keyspaces provisioning across distributed batch workloads, coordinating global state across batch loader pods via EFS-based mutex, with table provisioning lifecycles tied to Flink job execution. Projected to reduce Keyspaces spend by **20% or ~$120k annually** across targeted high-cost tables, based on cost modelling `(p95)` of batch-driven table access patterns.
 -   Introduced automated certificate issuance for AWS PCA and Venafi-managed TLS certificates, reducing operational toil.
